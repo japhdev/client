@@ -1,4 +1,5 @@
 import React from "react";
+import {ReactTyped} from "react-typed"
 
 export default function Profile() {
     return (
@@ -30,7 +31,20 @@ export default function Profile() {
                         <span className="primary-text">
                             {""}
                             <h1>
-                                
+                                {""}
+                                <ReactTyped
+                                strings={[
+                                    "Software Engineer",
+                                    "Backend Developer",
+                                    "Web Developer",
+                                    "Mobile Developer",
+                                ]}
+                                typeSpeed={50}
+                                backSpeed={50}
+                                backDelay={3000} 
+                                loop
+                                />
+                            
                             </h1>
                         </span>
                     </div>
