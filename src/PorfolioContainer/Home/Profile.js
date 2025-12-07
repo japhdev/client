@@ -6,17 +6,14 @@ export default function Profile() {
             <div className='profile-parent'>
                 <div className='profile-details'>
                     <div className='colz'>
-                        <a href='#'>
-                            <i className='fa fa-facebook-square'></i>
+                        <a href='https://github.com/japhdev'>
+                            <i className='fa fa-github'></i>
                         </a>
                         <a href='#'>
-                            <i className='fa fa-googles-plus-square'></i>
+                            <i className='fa fa-google'></i>
                         </a>
                         <a href='#'>
                             <i className='fa fa-instagram'></i>
-                        </a>
-                        <a href='#'>
-                            <i className='fa fa-youtube-square'></i>
                         </a>
                         <a href='#'>
                             <i className='fa fa-twitter'></i>
