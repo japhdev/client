@@ -26,6 +26,14 @@ export default function Profile() {
                             Hello, I'M <span className="highlighted-text">JAPH</span>
                         </span>
                     </div>
+                    <div className="profile-details-role">
+                        <span className="primary-text">
+                            {""}
+                            <h1>
+                                
+                            </h1>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
