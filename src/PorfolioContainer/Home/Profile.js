@@ -49,7 +49,7 @@ export default function Profile() {
                                 />
                             </h1>
                             <span className="profile-role-tagline">
-                                Building the future, one idea at a time.
+                                Building the future, one idea at a time.         
                             </span>
                         </span>
                     </div>
