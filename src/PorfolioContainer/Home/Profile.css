@@ -16,7 +16,7 @@
 }
 
 .profile-details-name {
-    font-size: 24px;
+    font-size: 50px;
     font-family: "Poppins SemiBold";
 }
 
@@ -39,7 +39,7 @@
 }
 
 .profile-role-tagline {
-    font-size: 19px;
+    font-size: 12px;
     margin: 5px 0 0 0;
     font-family: "Poppins Light";
 }
@@ -87,4 +87,88 @@
 .colz .colz-icon i:hover {
     transform: scale(1.5);
     transition: 0.5s ease-out;
+}
+/* Small laptops and horizontal tablets */
+@media screen and (max-width: 1024px) {
+    .profile-picture {
+        margin: 0 0 0 60px;
+    }
+
+    .profile-details-name {
+        font-size: 38px;
+    }
+
+    .profile-details-role {
+        font-size: 14px;
+    }
+
+    .profile-options .btn {
+        width: 130px;
+        padding: 12px;
+    }
+}
+
+/* Vertical tablets */
+@media screen and (max-width: 768px) {
+    .profile-picture {
+        height: 300px;
+        width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Large mobile devices */
+@media screen and (max-width: 640px) {
+    .profile-parent {
+        flex-direction: column-reverse;
+        margin: 40px 0 0 0;
+    }
+
+    .profile-picture {
+        margin: 0 !important;
+    }
+
+    .profile-options {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .profile-details {
+        margin: 25px 0 0;
+        text-align: center;
+    }
+
+    .profile-options .highlighted-btn {
+        margin: 0 !important;
+    }
+}
+
+/* Medium mobile devices */
+@media screen and (max-width: 480px) {
+    .profile-picture {
+        height: 260px;
+        width: 260px;
+        margin-top: -60px;
+    }
+
+    .profile-details-name {
+        font-size: 28px;
+    }
+
+    .profile-details-role {
+        font-size: 12px;
+    }
+}
+
+/* Small mobile devices (iPhone SE, 12 mini) */
+@media screen and (max-width: 375px) {
+    .profile-picture {
+        height: 230px;
+        width: 230px;
+        margin-top: -80px;
+    }
+
+    .profile-details {
+        width: 90%;
+    }
 }
