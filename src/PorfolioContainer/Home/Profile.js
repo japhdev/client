@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
+import './Profile.css'
 
 export default function Profile() {
     return (
