@@ -46,7 +46,19 @@ export default function Profile() {
                                 />
                             
                             </h1>
+                            <span className="profile-role-tagline">
+                                Building the future, one idea at a time.
+                            </span>
                         </span>
+                    </div>
+                    <div className="profile-options">
+                        <button className="btn primary-btn">
+                            {""}
+                            Contact Me {" "}
+                        </button>
+                        <a href="CurriculumVitae.pdf" download="Josue Alan Pablo Hernandez.pdf">
+                            <button className="btn highlighted-btn">Get Resume</button>
+                        </a>
                     </div>
                 </div>
             </div>
