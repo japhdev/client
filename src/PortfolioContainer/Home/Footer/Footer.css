@@ -17,6 +17,9 @@
     height: 130px;
 
 }
+
+/* Responsive styles*/
+
 @media only screen and (mas-width: 1110px) {
     .footer-parent {
         display: flex;
