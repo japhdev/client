@@ -33,11 +33,11 @@ export default function Header() {
     const getHeaderOptionsClass = (index) => {
         let classes = "header-option";
         if (index < TOTAL_SCREENS.length - 1)
-            classes += "header-option-separator";
+            classes += " header-option-separator";
 
         if (selectedScreen === index)
-            classes += "selected-header-option";
-        return
+            classes += " selected-header-option";
+        return classes;
     }
 
     const switchScreen = (index, screen) => {
@@ -60,7 +60,7 @@ export default function Header() {
                     <div className='header-logo'>
                         <span>JAPH Dev</span>
                     </div>
-                    <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : Header}>
+                    <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"}>
                         {getHeaderOptions()}
                     </div>
                 </div>
