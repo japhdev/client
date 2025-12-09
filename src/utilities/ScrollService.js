@@ -1,5 +1,5 @@
 import { TOTAL_SCREENS } from "./commonUtils";
-import {every, Subject} from 'rxjs'
+import { every, Subject } from 'rxjs'
 
 export default class ScrollService {
     static scrollHandler = new ScrollService();
@@ -7,58 +7,58 @@ export default class ScrollService {
     static currentScreenBroadCaster = new Subject()
     static currentScreenFadeIn = new Subject()
 
-    constructor(){
+    constructor() {
         window.addEventListener('scroll', this.checkCurrentScreenUnderViewport);
     }
-    scrollToHireMe = ()=>{
+    scrollToHireMe = () => {
         let contactMeScreen = document.getElementById("Contact Me")
-        if(!contactMeScreen) return;
-        contactMeScreen.scrollIntoView({behavior: "smooth"})
+        if (!contactMeScreen) return;
+        contactMeScreen.scrollIntoView({ behavior: "smooth" })
     }
-    scrollToHome = ()=>{
+    scrollToHome = () => {
         let HomeScreen = document.getElementById("Home")
-        if(!HomeScreen) return;
-        HomeScreen.scrollIntoView({behavior: "smooth"})
+        if (!HomeScreen) return;
+        HomeScreen.scrollIntoView({ behavior: "smooth" })
     }
-    isElementInView =(elem, type)=>{
-        let rec= elem.getBoundingClientRect();
+    isElementInView = (elem, type) => {
+        let rec = elem.getBoundingClientRect();
         let elementTop = rec.top;
         let elementBotton = rec.Bottom;
 
-        let partiallyVisible = elementTop < window.innerHeight && elementBotton >=0;
-        let completelyVisible = elementBotton >= 0 && elementBotton <=window.innerHeight;
+        let partiallyVisible = elementTop < window.innerHeight && elementBotton >= 0;
+        let completelyVisible = elementBotton >= 0 && elementBotton <= window.innerHeight;
 
-        switch(type){
+        switch (type) {
             case "partial":
-            return partiallyVisible;
+                return partiallyVisible;
 
             case "complete":
                 return completelyVisible
-                default:
-                    return false
+            default:
+                return false
         }
     }
 
-    checkCurrentScreenUnderViewport =(event)=>{
-        if(!event || Object.keys(event).length <1)
+    checkCurrentScreenUnderViewport = (event) => {
+        if (!event || Object.keys(event).length < 1)
             return;
-        for(let screen of TOTAL_SCREENS){
+        for (let screen of TOTAL_SCREENS) {
             let screenFromDOM = document.getElementById(screen.screen_name);
-            if(!screenFromDOM)
-            continue;
+            if (!screenFromDOM)
+                continue;
 
             let fullyVisible = this.isElementInView(screenFromDOM, "complete");
             let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
 
-            if(fullyVisible || partiallyVisible){
-                if(partiallyVisible && !screen.alreadyRendered){
+            if (fullyVisible || partiallyVisible) {
+                if (partiallyVisible && !screen.alreadyRendered) {
                     ScrollService.currentScreenFadeIn.next({
                         fadeInScreen: screen.screen_name
                     });
                     screen['alreadyRendered'] = true;
                     break;
                 }
-                if(fullyVisible) {
+                if (fullyVisible) {
                     ScrollService.currentScreenBroadCaster.next({
                         screenInView: screen.screen_name
                     });
