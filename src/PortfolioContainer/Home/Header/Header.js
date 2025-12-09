@@ -29,7 +29,17 @@ export default function Header() {
         )
     }
 
-    
+    const getHeaderOptionsClass =(index)=>{
+        let classes = "header-option";
+        if(index < TOTAL_SCREENS.length -1)
+            classes += "header-option-separator";
+
+        if(selectedScreen === index)
+            classes += "selected-header-option";
+        return
+    }
+
+
     return (
         <div>
 
