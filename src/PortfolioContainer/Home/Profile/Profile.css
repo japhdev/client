@@ -160,7 +160,7 @@
     }
 }
 
-/* Small mobile devices (iPhone SE, 12 mini) */
+/* Small mobile devices */
 @media screen and (max-width: 375px) {
     .profile-picture {
         height: 230px;
