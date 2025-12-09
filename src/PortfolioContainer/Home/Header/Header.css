@@ -42,7 +42,7 @@
 }
 
 .selected-header-option {
-    color: var(--toast-error);
+    color:  #11761a;
 }
 
 /* Responsive styles*/
