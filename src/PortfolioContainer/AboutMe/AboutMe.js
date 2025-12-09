@@ -5,7 +5,10 @@ import Animations from '../../utilities/Animations'
 
 export default function AboutMe() {
     return (
-        <div>
+        <div className='about-me-container screen-container'>
+            <div className='about-me-parent'>
+                <ScreenHeading title={'AboutMe'} subHeading={'Why Choose Me'}/>
+            </div>
 
         </div>
     )
