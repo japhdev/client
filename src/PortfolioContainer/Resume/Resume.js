@@ -28,9 +28,94 @@ export default function Resume(props) {
                 </div>
             </div>
         </div>
-    }
+    };
 
-    
+    const resumeBullets =[
+        {label: "Education", logoSrc: "education.svg"},
+        {label: "Work History", logoSrc: "work-history.svg"},
+        {label: "Programming Skills", logoSrc: "programming-skills.svg"},
+        {label: "Projects", logoSrc: "projects.svg"},
+        {label: "Interests", logoSrc: "interests.svg"},
+    ];
+
+    const programmingSkillsDetails = [
+        {skill: "Python", ratingPercentage: 70},
+        {skill: "JavaScript", ratingPercentage: 60},
+        {skill: "React JS", ratingPercentage: 75},
+        {skill: "HTML", ratingPercentage: 70},
+        {skill: "CSS", ratingPercentage: 60},
+        {skill: "SQL", ratingPercentage: 50},
+    ];
+
+    const projectDetails =[
+        {
+            title: "Personal Porfolio Website",
+            duration: {fromDate: "2025", toDate: "2026"},
+            description: "A Personal Portfolio website to showcase all my details and projects at one place",
+            subHeading: "Technologies Used: React JS, CSS, HTML, Bootstrap"
+        },
+        {
+            title: "Schedule Manager",
+            duration: {fromDate: "2023", toDate: "2024"},
+            description: "Schedule Manager for better organization of staff check-ins and check-outs",
+            subHeading: "Technologies Used: Swift, Data Core, FireBase"
+        },
+        {
+            title: "Porfolio Beta",
+            duration: {fromDate: "2024", toDate: "2025"},
+            description: "Beta portfolio using pure HTML and pure CSS, with API requests to Figma",
+            subHeading: "Technologies Used: Python, Flask, HTML, CSS"
+        },
+    ];
+
+    const resumeDetails = [
+        <div className='resume-screen-container' key="education">
+            <ResumeHeading 
+            heading={"Universidad México Internacional"}
+            subHeading={"SOFTWARE DEVELOPMENT ENGINEERING"}
+            fromDate={"2021"}
+            toDate={"2025"}
+            />
+            <ResumeHeading 
+            heading={"Preparatoria Oficial"}
+            subHeading={"Official High School Studies"}
+            fromDate={"2011"}
+            toDate={"2013"}
+            />
+        </div>,
+        <div className='resume-screen-container' key="work-experience">
+            <ResumeHeading 
+            heading={"Coppel Company"}
+            subHeading={"Provisional Advisor"}
+            fromDate={"2019"}
+            toDate={"2025"}
+            />
+            <div className='experience-description='>
+                <span className='resume-description-text'>
+                    Experience with Afore Systems
+                </span>
+            </div>
+
+            <div className='experience-description='>
+                <span className='resume-description-text'>
+                    -Provided professional guidance within Afore processes.
+                </span>
+                <br/>
+                <span className='resume-description-text'>
+                    -Managed the acquisition of the CONSAR key.
+                </span>
+                <br/>
+                <span className='resume-description-text'>
+                    -Ensured compliance with regulatory and administrative procedures.
+                </span>
+
+
+            </div>
+
+        </div>
+    ]
+
+
 
     let fadeInScreenHandler = (screen) => {
         if (screen.fadeScreen !== props.id)
