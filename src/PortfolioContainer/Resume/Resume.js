@@ -13,9 +13,9 @@ export default function Resume(props) {
                 <div className='heading-bullet'>
                     <span>{props.heading ? props.heading : ''}</span>
                     {props.fromDate && props.toDate ? (
-                        <dov className='heading-date'>
+                        <div className='heading-date'>
                             {props.fromDate + "_" + props.toDate}
-                        </dov>
+                        </div>
                     ) : (
                         <div></div>
                     )}
@@ -29,6 +29,8 @@ export default function Resume(props) {
             </div>
         </div>
     }
+
+    
 
     let fadeInScreenHandler = (screen) => {
         if (screen.fadeScreen !== props.id)
