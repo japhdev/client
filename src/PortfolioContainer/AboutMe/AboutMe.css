@@ -16,6 +16,7 @@
     display: flex;
     width: 100%;
     box-shadow: 0 0px 20px -2px rgb(130, 132, 238);
+    border-radius: 20px;
 }
 
 .about-me-profile {
@@ -24,6 +25,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 20px 0 0 20px;
 }
 
 .about-me-details {
