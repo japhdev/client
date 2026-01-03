@@ -11,7 +11,7 @@ export default function AboutMe(props) {
         Animations.animations.fadeInScreen(props.id);
     };
 
-    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler)
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const SCREEN_CONSTANTS = {
         description: "Passionate about continuous learning and problem-solving. Currently building my career as a Software Development Engineer, eager to grow through new challenges and contribute with efficient, practical solutions in dynamic and improvement- driven environments.",
