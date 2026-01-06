@@ -4,6 +4,7 @@
     overflow:hidden;
     display: flex;
     justify-content: center;
+    
 }
 
 .footer-parent {
@@ -14,11 +15,11 @@
 
 .footer-parent img {
     max-width: 100%;
-    height: 130px;
+    height: 100%;
 
 }
 
-/* Responsive styles*/
+
 
 @media only screen and (max-width: 1110px) {
     .footer-parent {

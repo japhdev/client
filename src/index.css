@@ -82,42 +82,34 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .btn {
-  border-radius: 50px;
-  padding: 14px 0;
-  width: 160px;
-  cursor: pointer;
-  transition: 0.2s;
-  font-family: "Poppins SemiBold";
+    padding: 16px 35px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    letter-spacing: 0.5px;
 }
 
-.btn:active {
-  transform: translateY(2px);
-}
 
-.primary-btn {
-  color: var(--white);
-  border: 2px solid linen;
-  font-size: 12px;
-  background-color: #111a51;
-}
+
 /* @media only screen and (max-width: 414px) {
   .primary-btn {
     font-size: 13px;
   }
 } */
 
-.primary-btn:hover {
-  color: aliceblue;
-  border: 2px solid #636263;
-  background-color: #060f47ca;
-}
 
-.highlighted-btn {
-  color: var(--white);
-
-  font-size: 12px;
-  background-color: #169520;
-}
 @media only screen and (max-width: 568px) {
   .highlighted-btn {
     z-index: -900;

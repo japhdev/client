@@ -67,6 +67,13 @@ export default function Profile() {
                     </div>
                 </div>
                 {/*
+                <div className='footer-container'>
+            <div className='footer-parent'>
+                <img src={require ('../../../assets//Home/Adobe Express - file.png')} alt='no internet connection'/>
+            </div>
+
+        </div>
+                
                 <div className="profile-picture">
                     <div className="profile-picture-background"></div>
                 </div>
