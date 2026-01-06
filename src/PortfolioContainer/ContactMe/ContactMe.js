@@ -4,15 +4,16 @@ import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import { ReactTyped } from "react-typed";
 import "./ContactMe.css";
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function ContactMe(props) {
     let fadeInScreenHandler = (screen) => {
-        if (screen.fadeScreen !== props.id) return;
+        if (screen.fadeInScreen !== props.id) return;
         Animations.animations.fadeInScreen(props.id);
     };
 
-    const fadeInSubscription =
-        ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -26,7 +27,6 @@ export default function ContactMe(props) {
         phone: "+52 55 1234 5678",
         email: "alanpablo1835@gmail.com",
         location: "México",
-
     };
 
     const handleName = (e) => {
@@ -57,27 +57,48 @@ export default function ContactMe(props) {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
         if (!validateForm()) return;
-
+        
         setLoading(true);
-
-        setTimeout(() => {
-            setBanner("Message sent successfully! I'll get back to you soon.");
+        
+        try {
+            let data = {
+                name,
+                email,
+                message
+            };
+            
+            const res = await axios.post(`/contact`, data);
+            if (name.length === 0 || email.length === 0 || message.length === 0) {
+                setBanner(res.data.msg);
+                toast.error(res.data.msg);
+            } else if (res.status === 200) {
+                setBanner(res.data.msg);
+                toast.success(res.data.msg);
+            }
+            
+        } catch (error) {
+            console.log(error);
+            setBanner("Error sending message. Please try again.");
+            toast.error("Error sending message. Please try again.");
+        } finally {
             setLoading(false);
-            setIsSubmitted(true);
-
-
-            setTimeout(() => {
-                setName("");
-                setEmail("");
-                setMessage("");
-                setIsSubmitted(false);
-                setBanner("");
-            }, 3000);
-        }, 1500);
+            
+            if (!loading) {
+                setIsSubmitted(true);
+                
+                setTimeout(() => {
+                    setName("");
+                    setEmail("");
+                    setMessage("");
+                    setIsSubmitted(false);
+                    setBanner("");
+                }, 3000);
+            }
+        }
     };
 
     return (
@@ -87,9 +108,7 @@ export default function ContactMe(props) {
                 <div className="col">
                     <h2 className="title">
                         <ReactTyped
-                            strings={[
-                                "Get In Touch"
-                            ]}
+                            strings={["Get In Touch"]}
                             typeSpeed={50}
                             backSpeed={50}
                             backDelay={6000}
@@ -108,18 +127,19 @@ export default function ContactMe(props) {
                                 </div>
                             </div>
                         </div>
+                        
 
-                        <div className="contact-item">
-                            <div className="contact-icon">
-                                <i className="fa fa-envelope"></i>
-                            </div>
-                            <div className="contact-details">
-                                <h4>Email</h4>
+                            <div className="contact-item">
+                                <div className="contact-icon">
+                                    <i className="fa fa-envelope"></i>
+                                </div>
                                 <div className="contact-details">
-                                    {contactInfo.email}
+                                    <h4>Email</h4>
+                                    <div className="contact-details">
+                                        {contactInfo.email}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                         <div className="contact-item">
                             <div className="contact-icon">
@@ -132,14 +152,13 @@ export default function ContactMe(props) {
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div className="social-links">
                         <a href="https://github.com/japhdev" target="_blank" rel="noopener noreferrer" title="GitHub">
                             <i className="fa fa-github"></i>
                         </a>
-                        <a href="mailto:tuemail@example.com" title="Email">
+                        <a href={`mailto:${contactInfo.email}`} title="Email">
                             <i className="fa fa-envelope"></i>
                         </a>
                         <a href="https://linkedin.com/in/tuperfil" target="_blank" rel="noopener noreferrer" title="LinkedIn">
@@ -161,7 +180,7 @@ export default function ContactMe(props) {
                             <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
                         </div>
                     ) : (
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={submitForm}>
                             {banner && <p className="success-banner">{banner}</p>}
 
                             <div className="form-group">
@@ -198,6 +217,7 @@ export default function ContactMe(props) {
                                     value={message}
                                     className={errors.message ? "error" : ""}
                                     placeholder="Tell me about your project or inquiry..."
+                                    rows="5"
                                 />
                                 {errors.message && <span className="error-message">{errors.message}</span>}
                             </div>

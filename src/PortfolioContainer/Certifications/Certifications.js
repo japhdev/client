@@ -168,7 +168,7 @@ const PdfCertificatesCarousel = () => {
 
 export default function Certifications(props) {
     let fadeInScreenHandler = (screen) => {
-        if (screen.fadeScreen !== props.id) return;
+        if (screen.fadeInScreen !== props.id) return;
         Animations.animations.fadeInScreen(props.id);
     };
 

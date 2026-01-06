@@ -8,7 +8,7 @@ export default function Resume(props) {
     const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
 
     let fadeInScreenHandler = (screen) => {
-        if (screen.fadeScreen !== props.id) return;
+        if (screen.fadeInScreen !== props.id) return;
         Animations.animations.fadeInScreen(props.id);
     };
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
