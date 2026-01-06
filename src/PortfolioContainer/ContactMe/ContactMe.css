@@ -21,7 +21,7 @@
 .title {
     font-size: 3rem;
     font-weight: 700;
-    color: #fff;
+    color:var(--white);
     margin-bottom: 30px;
     background: rgb(86, 85, 85);
     -webkit-background-clip: text;
@@ -59,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #3b82f6;
+    color: var(--light-blue);
     font-size: 1.1rem;
     flex-shrink: 0;
 }
@@ -100,14 +100,13 @@
 }
 
 .social-links h5 {
-    color: #fff;
+    color: var(--white);
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 15px;
     text-align: center;
 }
 
-/* Redes sociales existentes */
 .col a {
     display: inline-flex;
     align-items: center;
@@ -220,8 +219,8 @@ textarea {
 }
 
 .send-btn button {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: white;
+    background: var(--light-blue);
+    color: var(--white);
     border: 2px solid transparent;
     padding: 14px 40px;
     font-size: 1rem;
@@ -239,7 +238,7 @@ textarea {
     color: aliceblue;
     border: 2px solid #636263;
     background-color: #060f47ca; 
-    background: linear-gradient(135deg, #3069c4, #1d4eb9);
+    background: var(--light-blue);
 }
 
 
@@ -434,12 +433,12 @@ textarea { animation-delay: 0.3s; }
 
 
 input.error, textarea.error {
-    border-color: #ef44446b;
+    border-color: var(--toast-error);
     background: rgba(130, 87, 87, 0.05);
 }
 
 .error-message {
-    color: #ef4444;
+    color: var(--error-message);
     font-size: 0.85rem;
     margin-top: 5px;
     display: block;
@@ -455,7 +454,7 @@ input.error, textarea.error {
 }
 
 .success-message h3 {
-    color: #10b981b8;
+    color: var(--toast-success);
     margin-bottom: 10px;
 }
 

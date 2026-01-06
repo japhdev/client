@@ -94,7 +94,7 @@
     position: relative;
     padding: 20px;
     background: rgba(59, 130, 246, 0.05);
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid var(--light-blue);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
     }
@@ -130,7 +130,7 @@
     transform: translateY(-50%);
     width: 5px;
     height: 18px;
-    background: linear-gradient(135deg, #667eea, #4299e1);
+    background: var(--light-blue);
     border-radius: 2px;
     }
 
@@ -175,7 +175,7 @@
     height: 8px;
     width: 8px;
     margin: 0 12px 0 0;
-    background: linear-gradient(135deg, #667eea, #4299e1);
+    background: var(--light-blue);
     border-radius: 50%;
     position: relative;
     z-index: 1;

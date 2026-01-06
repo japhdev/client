@@ -137,7 +137,7 @@
     line-height: 1.6;
     max-width: 500px;
     padding-left: 10px;
-    border-left: 3px solid #3b82f6;
+    border-left: 3px solid  var(--light-blue);
     background: rgba(59, 130, 246, 0.05);
     padding: 15px 20px;
     border-radius: 0 12px 12px 0;
@@ -156,7 +156,7 @@
 
 
 .primary-btn {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background: var(--light-blue);
     color: white;
     border: 2px solid transparent;
 }
@@ -165,13 +165,13 @@
     color: aliceblue;
     border: 2px solid #636263;
     background-color: #060f47ca; 
-    background: linear-gradient(135deg, #3069c4, #1d4eb9);
+    background: var(--light-blue-shadow);
 }
 
 .highlighted-btn {
     background: transparent;
-    color: #3b82f6;
-    border: 2px solid #3b82f6;
+    color: var(--light-blue);
+    border: 2px solid var(--light-blue);
 }
 
 .highlighted-btn:hover {
