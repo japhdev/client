@@ -126,8 +126,7 @@ export default function ContactMe(props) {
                                     {contactInfo.phone}
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div>                                                                                                                                                                                                                                                                                                                                                                                                      
 
                             <div className="contact-item">
                                 <div className="contact-icon">
