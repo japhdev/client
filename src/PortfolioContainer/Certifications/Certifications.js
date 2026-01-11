@@ -18,14 +18,14 @@ const certificates = [
         id: 2,
         title: "Python Programming Fundamentals",
         subtitle: "Microsoft",
-        image: "img/certificate/Coursera IRJTHYZ0ZS9I_page-0001.jpg",
+        image: "img/certificate/Coursera.jpg",
         pdfUrl: "pdf/Coursera_IRJTHYZ0ZS9I.pdf"
     },
     {
         id: 3,
         title: "Python Santander Open Academy",
         subtitle: "Santander Open Academy",
-        image: "img/certificate/Copia de Certificado_Pyhon_Santander_page-0001.jpg",
+        image: "img/certificate/Pyhon_Santander.jpg",
         pdfUrl: "pdf/Copia de Certificado_Pyhon_Santander_page-0001.pdf"
     },
     {
