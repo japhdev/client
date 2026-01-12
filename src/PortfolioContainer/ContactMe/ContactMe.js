@@ -61,6 +61,11 @@ export default function ContactMe(props) {
         
     };
 
+    const contactInfo = {
+        phone: "+52 55 1234 5678",
+        email: "alan.hernandez.18400700@gmail.com",
+        location: "México",
+    };
 
     return (
         <div className="main-container" id={props.id || ""}>
@@ -76,12 +81,49 @@ export default function ContactMe(props) {
                             loop
                         />
                     </h2>
+                    <div className="contact-info">
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <i className="fa fa-phone"></i>
+                            </div>
+                            <div className="contact-details">
+                                <h4>Phone</h4>
+                                <div href={`tel:${contactInfo.phone}`} className="contact-details">
+                                    {contactInfo.phone}
+                                </div>
+                            </div>
+                        </div>                                                                                                                                                                                                                                                                                                                                                                                                      
+
+                            <div className="contact-item">
+                                <div className="contact-icon">
+                                    <i className="fa fa-envelope"></i>
+                                </div>
+                                <div className="contact-details">
+                                    <h4>Email</h4>
+                                    <div className="contact-details">
+                                        {contactInfo.email}
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <i className="fa fa-map-marker"></i>
+                            </div>
+                            <div className="contact-details">
+                                <h4>Location</h4>
+                                <div className="contact-details">
+                                    {contactInfo.location}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="social-links">
                         <a href="https://github.com/japhdev">
                                 <i className="fa fa-github"></i>
                             </a>
-                            <a href="#">
+                            <a href={`mailto:${contactInfo.email}`} title="Email">
                                 <i className="fa fa-google"></i>
                             </a>
                             <a href="#">
@@ -98,11 +140,11 @@ export default function ContactMe(props) {
                     </div>
 
                         <form onSubmit={submitForm}>
-                            <p >{banner}</p>
 
                             <div className="form-group">
                                 <label htmlFor="name">Name *</label>
                                 <input type="text"
+                                placeholder="Your name"
                                 onChange={handleName}
                                 value={name}/>
                             </div>
@@ -111,7 +153,7 @@ export default function ContactMe(props) {
                                 <label htmlFor="email">Email *</label>
                                 <input
                                     type="email"
-                                    
+                                    placeholder="your.email@example.com"
                                     onChange={handleEmail}
                                     value={email}
                                 />
@@ -132,7 +174,7 @@ export default function ContactMe(props) {
                                 <button type="submit">
                                     Send Message <i className="fa fa-paper-plane"/>
                                     {bool?(<b className="load">
-                                        <p>load</p>
+                                        
                                     </b>):("")}
                                 </button>
                             </div>
